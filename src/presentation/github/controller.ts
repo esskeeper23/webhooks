@@ -10,12 +10,10 @@ export class GithubController {
 
     webhookHanler = (req: Request, res: Response) => {
 
-        const githubEvent = req.headers['x-github-event'] || 'unknown';
+        const githubEvent = req.headers['x-github-event'] ?? 'unknown';
         const payload = req.body;
 
-        console.log({githubEvent})
-
-        res.json('ok')
+        res.status(202).send('Accepted');
     }
 
 }
